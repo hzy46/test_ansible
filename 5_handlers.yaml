@@ -1,0 +1,15 @@
+---
+- hosts: g1
+  remote_user: core
+  tasks:
+  - name: copy file
+    copy:
+      src: ./test_ansible
+      dest: ~/test_ansible
+    notify:
+      - print notified
+  handlers:
+    - name: print notified
+      shell: echo >> ~/test_ansible
+
+    
