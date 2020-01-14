@@ -1,0 +1,10 @@
+---
+- hosts: g1
+  remote_user: core
+  vars:
+    my_mystery: test
+  tasks:
+  - name: print {{ my_mystery }}
+    shell: echo {{ my_mystery }} > ~/test
+
+    
