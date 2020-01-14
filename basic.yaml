@@ -1,0 +1,9 @@
+- hosts: all
+  remote_user: core
+  tasks:
+  - name: print ok
+    command: echo "ok!"
+  - name: ensure ssh is running
+    service:
+      name: ssh
+      state: started
