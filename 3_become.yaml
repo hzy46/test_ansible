@@ -3,5 +3,5 @@
   remote_user: core
   tasks:
   - name: task1
-    command: echo 1 > /
+    shell: echo 1>/
     become: yes
