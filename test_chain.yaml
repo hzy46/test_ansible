@@ -1,9 +1,10 @@
+---
 - hosts: g1
   remote_user: core
   tasks:
   - name: task1
     command: echo "1"
   - name: task2
-    command: exit 1
+    command: /bin/false
   - name: task3
     command: echo "3";
