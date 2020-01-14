@@ -10,6 +10,6 @@
       - print notified
   handlers:
     - name: print notified
-      shell: echo >> ~/test_ansible
+      shell: echo notified >> ~/test_ansible
 
     
