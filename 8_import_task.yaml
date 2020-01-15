@@ -5,7 +5,10 @@
   - import_tasks: debug_task.yaml
     vars:
       msg: "8_import_task"
-    notify: 
+  - name: "notify"
+    debug:
+      msg: "notify"
+    notify:
       - "ok"
   handlers:
   - name: "ok"
