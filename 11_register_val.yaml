@@ -1,0 +1,11 @@
+---
+- hosts: g1
+  remote_user: core
+  tasks:
+  - name: test
+    shell: /bin/false
+    register: false_return
+    ignore_errors: true
+  - name: debug
+    debug:
+      var: false_return
