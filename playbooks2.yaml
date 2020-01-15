@@ -1,0 +1,7 @@
+---
+- hosts: g2
+  remote_user: core
+  tasks:
+  - name: playbooks2-debug
+    debug:
+      msg: playbooks2-debug

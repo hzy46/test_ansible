@@ -1,0 +1,7 @@
+---
+- hosts: g1
+  remote_user: core
+  tasks:
+  - name: playbooks1-debug
+    debug:
+      msg: playbooks1-debug
