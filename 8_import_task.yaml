@@ -10,7 +10,7 @@
     notify:
       - "ok"
   handlers:
-  - name: "ok"
-    import_tasks: debug_task.yaml
-    vars:
-      msg: "8_import_task ok"
+    - import_tasks: debug_task.yaml
+      vars:
+        msg: "8_import_task ok"
+      listen: "ok"
