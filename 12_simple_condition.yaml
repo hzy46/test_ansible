@@ -14,8 +14,7 @@
     debug:
       msg: "ok-1-2"
     when:
-      - test1.rc == 0
-      - test2.rc == 0
+      - (test1.rc == 0) and (test2.rc == 0)
   - name: test3
     shell: /bin/false
     register: test3
