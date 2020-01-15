@@ -30,6 +30,7 @@
     when:
       - test3.rc == 0
       - test4.rc == 0
+    register: debug_ok34
   - name: debug
     debug:
       msg: "test1 is failed"
