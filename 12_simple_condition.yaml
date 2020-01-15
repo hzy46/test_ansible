@@ -12,7 +12,21 @@
     ignore_errors: true
   - name: debug
     debug:
-      msg: "ok"
+      msg: "ok-1-2"
+    when:
+      - test1.rc == 0
+      - test2.rc == 0
+  - name: test3
+    shell: /bin/false
+    register: test3
+    ignore_errors: true
+  - name: test4
+    shell: /bin/true
+    register: test4
+    ignore_errors: true
+  - name: debug
+    debug:
+      msg: "ok-3-4"
     when:
       - test1.rc == 0
       - test2.rc == 0
