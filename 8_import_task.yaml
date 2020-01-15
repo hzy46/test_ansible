@@ -10,6 +10,7 @@
     notify:
       - "debug_task_echo_8_import_task ok"
   handlers:
+    # import task是一种内部机制，无法改名也无法listen什么的，如果要改名，可以用模板实现
     - import_tasks: debug_task.yaml
       vars:
         msg: "8_import_task ok"
