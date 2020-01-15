@@ -1,0 +1,18 @@
+---
+- hosts: g1
+  remote_user: core
+  tasks:
+  - name: test1
+    shell: /bin/true
+    register: test1
+    ignore_errors: true
+  - name: test2
+    shell: /bin/true
+    register: test2
+    ignore_errors: true
+  - name: debug
+    debug:
+      msg: "ok"
+    when:
+      - test1.rc == 0
+      - test2.rc == 0
