@@ -1,0 +1,3 @@
+- name: debug_task_echo_{{ msg }}
+  debug:
+    msg: [debug_task] {{ msg }}
