@@ -8,9 +8,8 @@
   - name: "notify"
     command: "echo 1"
     notify:
-      - "ok"
+      - "debug_task_echo_8_import_task ok"
   handlers:
     - import_tasks: debug_task.yaml
       vars:
         msg: "8_import_task ok"
-      listen: "ok"
