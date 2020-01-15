@@ -6,8 +6,7 @@
     vars:
       msg: "8_import_task"
   - name: "notify"
-    debug:
-      msg: "notify"
+    command: "echo 1"
     notify:
       - "ok"
   handlers:
