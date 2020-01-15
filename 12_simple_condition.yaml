@@ -10,7 +10,7 @@
     shell: /bin/true
     register: test2
     ignore_errors: true
-  - name: debug
+  - name: debug_ok12
     debug:
       msg: "ok-1-2"
     when:
@@ -24,9 +24,21 @@
     shell: /bin/true
     register: test4
     ignore_errors: true
-  - name: debug
+  - name: debug_ok34
     debug:
       msg: "ok-3-4"
     when:
       - test3.rc == 0
       - test4.rc == 0
+  - name: debug
+    debug:
+      msg: "test1 is failed"
+    when: test1 is failed
+  - name: debug
+    debug:
+      msg: "test1 is succeeded"
+    when: test1 is succeeded
+  - name: debug
+    debug:
+      msg: "debug_ok34 is skipped"
+    when: debug_ok34 is skipped
