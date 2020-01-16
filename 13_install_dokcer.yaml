@@ -1,0 +1,13 @@
+---
+- hosts: n36
+  remote_user: core
+  tasks:
+    - name: ensure docker packages are installed
+      action: apt
+      args:
+        pkg: "docker-ce=5:18.09.7~3-0~ubuntu-xenial"
+        force: true
+        state: "present"
+        update_cache: true
+      register: docker_task_result
+      until: docker_task_result is succeeded
