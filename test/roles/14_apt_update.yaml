@@ -1,0 +1,8 @@
+---
+- hosts: n36
+  remote_user: core
+  tasks:
+    - name: update
+      action: apt
+      args:
+        update_cache: true
