@@ -4,14 +4,11 @@
   - name: check apt update
     action: apt
     args:
-      name: python-pip
-      state: present
       update_cache: true
     register: check_apt_update
     retries: 3
     until: check_apt_update is succeeded
     ignore_errors: true
-  - debug:
+  - fail:
       msg: 'Please check your `sudo apt update` status, make sure it has a non-zero exits'
-    failed_when: check_apt_update is failed
     when: check_apt_update is failed
