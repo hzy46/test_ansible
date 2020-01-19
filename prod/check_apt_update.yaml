@@ -4,6 +4,8 @@
   - name: check apt update
     action: apt
     args:
+      name: python-pip
+      state: present
       update_cache: true
     register: check_apt_update
     retries: 3
