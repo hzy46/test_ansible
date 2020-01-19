@@ -2,11 +2,11 @@
 - hosts: localhost
   tasks:
   - name: check apt update
-    action: apt
-    args:
-      update_cache: true
+    command: apt-get update
     register: check_apt_update
+    become: yes
     retries: 3
   - debug:
       msg: 'Please check your `sudo apt update` status, make sure it has a non-zero exits'
     failed_when: check_apt_update is failed
+    when: check_apt_update is failed
