@@ -7,7 +7,7 @@
     become: yes
     retries: 3
   - debug:
-    var: check_apt_update
+      var: check_apt_update
   - debug:
       msg: 'Please check your `sudo apt update` status, make sure it has a non-zero exits'
     failed_when: check_apt_update is failed
