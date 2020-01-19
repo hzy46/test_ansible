@@ -6,9 +6,5 @@
     args:
       update_cache: true
     register: check_apt_update
-    retries: 3
+    retries: 2
     until: check_apt_update is succeeded
-    ignore_errors: true
-  - fail:
-      msg: 'Please check your `sudo apt update` status, make sure it has a non-zero exits'
-    when: check_apt_update is failed
