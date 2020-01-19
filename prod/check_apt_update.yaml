@@ -9,4 +9,4 @@
     retries: 3
   - debug:
       msg: 'Please check your `sudo apt update` status, make sure it has a non-zero exits'
-    faild_when: check_apt_update is failed
+    failed_when: check_apt_update is failed
